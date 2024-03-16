@@ -15,10 +15,13 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        url = "https://repo.panda-lang.org/releases"
+    }
 }
 
 dependencies {
-compileOnly "org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT"
+    compileOnly "org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT"
 }
 
 def targetJavaVersion = 8

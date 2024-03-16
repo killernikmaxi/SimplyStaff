@@ -1,3 +1,9 @@
 name: SimplyStaff
 version: '${version}'
 main: it.killernik.simplystaff.SimplyStaff
+commands:
+  gmc:
+    description: Gamemode creative
+    usage: /gmc
+    aliases:
+      - gamemode c

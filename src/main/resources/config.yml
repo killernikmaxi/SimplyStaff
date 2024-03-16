@@ -1,0 +1,42 @@
+#
+#                           DRAGON SECURITY
+#         Advanced chat protection, antiwdl, anti plugins viewer
+#                            More soon...
+#
+#   This is the main configuration file for DragonSecurity (config.yml)
+#
+#          If you need help with the configuration or have any
+#       Questions related to DragonSecurity, join us in our Discord.
+#
+#                        Discord: (ComingSoon)
+#                            Config: 1.0
+#
+
+#
+# MESSAGE PLACHEHOLDERS:
+#
+# » %player% - Name of the player
+#
+
+# Gamemodes
+Gamemodes:
+
+  # Enable or disable alerts to staff, example:
+  # SimplyStaff » Player have set his gamemode to creative
+  staff-alerts: true
+
+  survival:
+    message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
+    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &csurvival"
+
+  creative-message:
+    message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
+    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &ccreative"
+
+  adventure-message:
+    message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
+    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &cadventure"
+
+  spectator-message:
+    message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
+    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &cspectator"
