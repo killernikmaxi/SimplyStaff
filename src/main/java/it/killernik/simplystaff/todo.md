@@ -6,3 +6,4 @@
 - Bungee support (At the end)
 - Version: Lite & Premium
 - Database per multi server support
+- Permission for command

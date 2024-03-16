@@ -15,21 +15,21 @@ public class GamemodeSurvival implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Errore");
+            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
             return true;
         }
 
         Player player = (Player) sender;
 
         if (player.getGameMode() == GameMode.SURVIVAL) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
-            return true;
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.error"));
+            return false;
         }
 
         player.setGameMode(GameMode.SURVIVAL);
         player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.survival.message"), player));
         StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("Gamemodes.survival.alert"), player);
 
-        return false;
+        return true;
     }
 }

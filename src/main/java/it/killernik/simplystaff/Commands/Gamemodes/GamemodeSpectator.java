@@ -15,21 +15,21 @@ public class GamemodeSpectator implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Errore");
+            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
             return true;
         }
 
         Player player = (Player) sender;
 
         if (player.getGameMode() == GameMode.SPECTATOR) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
-            return true;
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.error"));
+            return false;
         }
 
         player.setGameMode(GameMode.SPECTATOR);
         player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.spectator.message"), player));
         StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("Gamemodes.spectator.alert"), player);
 
-        return false;
+        return true;
     }
 }

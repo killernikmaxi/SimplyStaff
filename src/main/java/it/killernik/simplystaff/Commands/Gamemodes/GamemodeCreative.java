@@ -15,21 +15,21 @@ public class GamemodeCreative implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Errore");
+            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
             return true;
         }
 
         Player player = (Player) sender;
 
         if (player.getGameMode() == GameMode.CREATIVE) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
-            return true;
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.error"));
+            return false;
         }
 
         player.setGameMode(GameMode.CREATIVE);
         player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.creative.message"), player));
         StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("Gamemodes.creative.alert"), player);
 
-        return false;
+        return true;
     }
 }

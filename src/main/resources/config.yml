@@ -25,6 +25,8 @@ Gamemodes:
   # SimplyStaff » Player has set his gamemode of creative
   staff-alerts: true
 
+  error: "&b&lSimplyStaff &8» &cYou are already in this gamemode"
+
   survival:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
     alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &csurvival"
@@ -42,15 +44,15 @@ Gamemodes:
     alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
 
 Help:
-  - "&b&lSimplyStaff &7- by killernik"
-  - "&7&oAlias: /simplestaff & /ss"
-  - ""
-  - "&8» &a/ss reload"
-  - "&8» &a/gm(c|s|sp|a) [player]"
+  - "&b&lSimplyStaff &7- by killernik\n"
+  - "&7&oAlias: /simplestaff & /ss\n"
+  - "\n"
+  - "&8» &a/ss reload\n"
+  - "&8» &a/gm(c|s|sp|a) [player]\n"
 
 Other:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
 
 # Error
 Error:
-  only-player: "&b&lSimplyStaff &8» &cError, Only player can execute this command!"
+  only-player: "SIMPLYSTAFF » Error, Only player can execute this command!"
