@@ -1,6 +1,7 @@
 package it.killernik.simplystaff.Commands.Gamemodes;
 
 
+import it.killernik.simplystaff.SimplyStaff;
 import org.bukkit.GameMode;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
@@ -20,12 +21,12 @@ public class GamemodeCreative implements CommandExecutor {
         Player player = (Player) sender;
 
         if (player.getGameMode() == GameMode.CREATIVE) {
-            player.sendMessage("Errore");
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
             return true;
         }
 
         player.setGameMode(GameMode.CREATIVE);
-        player.sendMessage("Done!");
+        player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.creative"));
 
         return false;
     }

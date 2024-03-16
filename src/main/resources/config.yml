@@ -21,22 +21,26 @@
 # Gamemodes
 Gamemodes:
 
-  # Enable or disable alerts to staff, example:
-  # SimplyStaff » Player have set his gamemode to creative
+  # Enable or disable alerts to staff who have permission "ss.alert", example:
+  # SimplyStaff » Player has set his gamemode of creative
   staff-alerts: true
 
   survival:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
-    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &csurvival"
+    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &csurvival"
 
-  creative-message:
+  creative:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
-    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &ccreative"
+    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &ccreative"
 
-  adventure-message:
+  adventure:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
-    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &cadventure"
+    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cadventure"
 
-  spectator-message:
+  spectator:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
-    alert: "&b&lSimplyStaff &8» &7%player% have set his gamemode to &cspectator"
+    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
+
+# Error
+Error:
+  only-player: "&b&lSimplyStaff &8» &cError, Only player can execute this command!"
