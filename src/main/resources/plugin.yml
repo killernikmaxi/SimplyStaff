@@ -7,3 +7,23 @@ commands:
     usage: /gmc
     aliases:
       - gamemode c
+  gma:
+    description: Gamemode adventure
+    usage: /gma
+    aliases:
+      - gamemode a
+  gmsp:
+    description: Gamemode spectator
+    usage: /gmsp
+    aliases:
+      - gamemode sp
+  gms:
+    description: Gamemode survival
+    usage: /gms
+    aliases:
+      - gamemode s
+  ss:
+    description: Main Command
+    usage: /ss
+    aliases:
+      - simplestaff

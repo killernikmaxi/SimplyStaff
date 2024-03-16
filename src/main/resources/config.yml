@@ -41,6 +41,16 @@ Gamemodes:
     message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
     alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
 
+Help:
+  - "&b&lSimplyStaff &7- by killernik"
+  - "&7&oAlias: /simplestaff & /ss"
+  - ""
+  - "&8» &a/ss reload"
+  - "&8» &a/gm(c|s|sp|a) [player]"
+
+Other:
+  config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
+
 # Error
 Error:
   only-player: "&b&lSimplyStaff &8» &cError, Only player can execute this command!"

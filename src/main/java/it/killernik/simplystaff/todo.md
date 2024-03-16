@@ -1,6 +1,6 @@
 # To do list:
 
-- Gamemodes (/gmc-/gms-/gmsp-/gma)
+- /gm(a|c|s|sp) [player]
 - Staff mode (/staff - /staffmode)
 - Basic commands (/kill - /ss - /simplystaff - etc..)
 - Bungee support (At the end)

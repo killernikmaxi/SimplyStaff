@@ -1,6 +1,7 @@
 package it.killernik.simplystaff;
 
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeCreative;
+import it.killernik.simplystaff.Commands.MainCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,6 +22,7 @@ public final class SimplyStaff extends JavaPlugin {
 
         //Bukkit.getPluginManager().registerEvents((Listener) new it.dragonpvp.dragonsecurity.Listener.CommandPreprocessListener(), (Plugin) this);
         getCommand("gmc").setExecutor(new GamemodeCreative());
+        getCommand("ss").setExecutor(new MainCommand());
 
 
         Bukkit.getLogger().info("SimlyStaff by killernik");

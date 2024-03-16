@@ -21,8 +21,12 @@ public class MessageUtil {
         message = ChatColor.translateAlternateColorCodes('&', message);
 
         // REPLACE PLACHEHOLDERS
-        message = message.replace("%player%", player.getName());
 
+        if (player == null) {
+            return message;
+        }
+
+        message = message.replace("%player%", player.getName());
         return message;
     }
 }
