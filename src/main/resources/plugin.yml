@@ -1,0 +1,3 @@
+name: SimplyStaff
+version: '${version}'
+main: it.killernik.simplystaff.SimplyStaff
