@@ -2,6 +2,7 @@ package it.killernik.simplystaff.Commands.Gamemodes;
 
 
 import it.killernik.simplystaff.SimplyStaff;
+import it.killernik.simplystaff.Utils.MessageUtil;
 import org.bukkit.GameMode;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
@@ -26,7 +27,7 @@ public class GamemodeSurvival implements CommandExecutor {
         }
 
         player.setGameMode(GameMode.SURVIVAL);
-        player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.survival"));
+        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.survival"), player));
 
         return false;
     }
