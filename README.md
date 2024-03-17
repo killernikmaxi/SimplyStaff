@@ -15,6 +15,7 @@ _A simple staff plugin_
 - /day [world] - Permission: "ss.day"
 - /night [world] - Permission: "ss.night"
 - /kill <player> - Permission: "ss.kill"
+- /heal [player] - Permission: "ss.heal" & "ss.heal.other"
 
 **Advanced:**
 - ComingSoon
