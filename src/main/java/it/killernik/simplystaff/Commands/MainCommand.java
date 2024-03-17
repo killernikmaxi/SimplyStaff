@@ -11,16 +11,32 @@ public class MainCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (args.length == 0) {
-            sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getStringList("Help").toString(), null));
+
+            if (!sender.hasPermission("ss.help")) {
+                sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                return true;
+            }
+
+            sender.sendMessage(MessageUtil.message("&b&lSimplyStaff &7- by killernik", null));
+            sender.sendMessage(MessageUtil.message("&7&oAlias: /simplestaff & /ssk", null));
+            sender.sendMessage("");
+            sender.sendMessage(MessageUtil.message("&8» &a/ss reload", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/gm(c|s|sp|a) [player]", null));
 
         } else {
 
             if (args[0].equalsIgnoreCase("reload")) {
+
+                if (!sender.hasPermission("ss.reload")) {
+                    sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                    return true;
+                }
+
                 SimplyStaff.getInstance().reloadConfig();
-                sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Other.config-reloaded"), null));
+                sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("OTHER.config-reloaded"), null));
             }
         }
 
-        return false;
+        return true;
     }
 }

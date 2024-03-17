@@ -8,7 +8,6 @@ import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.DragonFireball;
 import org.bukkit.entity.Player;
 
 public class GamemodeAdventure implements CommandExecutor {
@@ -16,20 +15,25 @@ public class GamemodeAdventure implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
+            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"));
             return true;
         }
 
         Player player = (Player) sender;
 
+        if (!player.hasPermission("ss.gma")) {
+            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), player));
+            return true;
+        }
+
         if (player.getGameMode() == GameMode.ADVENTURE) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.error"));
-            return false;
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"));
+            return true;
         }
 
         player.setGameMode(GameMode.ADVENTURE);
-        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.adventure.message"), player));
-        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("Gamemodes.adventure.alert"), player);
+        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.adventure.message"), player));
+        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.adventure.alert"), player);
 
         return true;
     }

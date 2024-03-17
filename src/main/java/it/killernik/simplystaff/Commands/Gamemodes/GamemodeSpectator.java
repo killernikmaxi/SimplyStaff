@@ -15,20 +15,25 @@ public class GamemodeSpectator implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("Error.only-player"));
+            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"));
             return true;
         }
 
         Player player = (Player) sender;
 
+        if (!player.hasPermission("ss.gmsp")) {
+            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), player));
+            return true;
+        }
+
         if (player.getGameMode() == GameMode.SPECTATOR) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("Gamemodes.error"));
-            return false;
+            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"));
+            return true;
         }
 
         player.setGameMode(GameMode.SPECTATOR);
-        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("Gamemodes.spectator.message"), player));
-        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("Gamemodes.spectator.alert"), player);
+        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.spectator.message"), player));
+        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.spectator.alert"), player);
 
         return true;
     }

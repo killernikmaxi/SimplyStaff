@@ -18,41 +18,43 @@
 # » %player% - Name of the player
 #
 
-# Gamemodes
-Gamemodes:
+COMMANDS:
 
-  # Enable or disable alerts to staff who have permission "ss.alert", example:
-  # SimplyStaff » Player has set his gamemode of creative
-  staff-alerts: true
+  # Gamemodes
+  Gamemodes:
 
-  error: "&b&lSimplyStaff &8» &cYou are already in this gamemode"
+    # Enable or disable alerts to staff who have permission "ss.alert", example:
+    # SimplyStaff » Player has set his gamemode of creative
+    staff-alerts: true
 
-  survival:
-    message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
-    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &csurvival"
+    error: "&b&lSimplyStaff &8» &cYou are already in this gamemode"
 
-  creative:
-    message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
-    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &ccreative"
+    survival:
+      message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
+      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &csurvival"
 
-  adventure:
-    message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
-    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cadventure"
+    creative:
+      message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
+      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &ccreative"
 
-  spectator:
-    message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
-    alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
+    adventure:
+      message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
+      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cadventure"
 
-Help:
-  - "&b&lSimplyStaff &7- by killernik\n"
-  - "&7&oAlias: /simplestaff & /ss\n"
-  - "\n"
-  - "&8» &a/ss reload\n"
-  - "&8» &a/gm(c|s|sp|a) [player]\n"
+    spectator:
+      message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
+      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
 
-Other:
+  Basic:
+    day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
+
+OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
 
 # Error
-Error:
+ERROR:
   only-player: "SIMPLYSTAFF » Error, Only player can execute this command!"
+  no-permission: "&b&lSimplyStaff &8» &cYou can't execute this command"
+  incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
+  specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
+  non-existent-world: "&b&lSimplyStaff &8» &cNon-existent world"
