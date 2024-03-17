@@ -22,7 +22,7 @@
 # SimplyStaff » Player has set his gamemode of creative
 STAFF-ALERTS:
   enabled: true
-  join-staff: "&b&lSimplyStaff &8» &7%player% joined the server!"
+  join-staff: "&b&lSimplyStaff &8» &a%player% &7joined the server!"
 
 COMMANDS:
 
@@ -33,24 +33,26 @@ COMMANDS:
 
     survival:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
-      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &csurvival"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &asurvival"
 
     creative:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
-      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &ccreative"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &acreative"
 
     adventure:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
-      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cadventure"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &aadventure"
 
     spectator:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
-      alert: "&b&lSimplyStaff &8» &7%player% has set his gamemode of &cspectator"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &aspectator"
 
   Basic:
     day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
     night: "&b&lSimplyStaff &8» &aTime night successfully set to the world"
-    kill: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
+    kill:
+      message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
+      alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
@@ -58,7 +60,7 @@ OTHER:
 # Error
 ERROR:
   only-player: "SIMPLYSTAFF » Error, Only player can execute this command!"
-  no-permission: "&b&lSimplyStaff &8» &cYou can't execute this command"
+  no-permission: "&b&lSimplyStaff &8» &cYou don't have permission to do this"
   incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
   specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
   non-existent-world: "&b&lSimplyStaff &8» &cNon-existent world"

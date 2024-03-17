@@ -41,11 +41,11 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("kill").setExecutor(new KillCommand());
 
 
-        Bukkit.getLogger().info("SimlyStaff by killernik enabled with success");
+        Bukkit.getLogger().info("[SimlyStaff] enabled with success");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("SimlyStaff by killernik disabled with success");
+        Bukkit.getLogger().info("[SimlyStaff] disabled with success");
     }
 }

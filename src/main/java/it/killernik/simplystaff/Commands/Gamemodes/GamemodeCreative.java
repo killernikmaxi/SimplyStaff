@@ -27,7 +27,7 @@ public class GamemodeCreative implements CommandExecutor {
         }
 
         if (player.getGameMode() == GameMode.CREATIVE) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"));
+            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"), player));
             return true;
         }
 

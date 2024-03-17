@@ -2,6 +2,7 @@ package it.killernik.simplystaff.Commands.Basic;
 
 import it.killernik.simplystaff.SimplyStaff;
 import it.killernik.simplystaff.Utils.MessageUtil;
+import it.killernik.simplystaff.Utils.StaffAlert;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,7 +33,14 @@ public class KillCommand implements CommandExecutor {
                 return true;
             } else {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.kill.message"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.message"), player));
+
+                if (commandSender instanceof Player) {
+                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staffer%", commandSender.getName()), player);
+                } else {
+                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staffer%", "&4&lConsole"), player);
+                }
+
                 player.setHealth(0);
 
                 return true;

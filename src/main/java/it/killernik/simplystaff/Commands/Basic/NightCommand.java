@@ -27,7 +27,7 @@ public class NightCommand implements CommandExecutor {
             } else {
 
                 ((Player) commandSender).getWorld().setTime(12000);
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.night"), (Player) commandSender));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.night"), (Player) commandSender));
 
             }
 
@@ -41,13 +41,12 @@ public class NightCommand implements CommandExecutor {
             }
 
             Bukkit.getWorld(worldname).setTime(12000);
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.night"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.night"), null));
 
 
         } else {
             commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
         }
-
 
         return true;
     }

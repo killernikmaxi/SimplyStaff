@@ -27,7 +27,7 @@ public class DayCommand implements CommandExecutor {
             } else {
 
                 ((Player) commandSender).getWorld().setTime(6000);
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.day"), (Player) commandSender));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.day"), (Player) commandSender));
 
             }
 
@@ -41,7 +41,7 @@ public class DayCommand implements CommandExecutor {
             }
 
             Bukkit.getWorld(worldname).setTime(6000);
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.day"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.day"), null));
 
 
         } else {

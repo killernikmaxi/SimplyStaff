@@ -27,7 +27,7 @@ public class GamemodeAdventure implements CommandExecutor {
         }
 
         if (player.getGameMode() == GameMode.ADVENTURE) {
-            player.sendMessage(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"));
+            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"), player));
             return true;
         }
 
