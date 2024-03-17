@@ -34,3 +34,6 @@ commands:
   heal:
     description: Heal Command
     usage: /heal
+  fly:
+    description: Fly Command
+    usage: /fly

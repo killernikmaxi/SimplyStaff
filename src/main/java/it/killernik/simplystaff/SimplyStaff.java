@@ -40,7 +40,7 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("kill").setExecutor(new KillCommand());
         getCommand("godmode").setExecutor(new GodmodeCommand());
         getCommand("heal").setExecutor(new HealCommand());
-
+        getCommand("fly").setExecutor(new FlyCommand());
 
         Bukkit.getLogger().info("[SimlyStaff] enabled with success");
     }
