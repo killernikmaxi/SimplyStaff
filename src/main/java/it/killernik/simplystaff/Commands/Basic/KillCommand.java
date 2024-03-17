@@ -20,7 +20,7 @@ public class KillCommand implements CommandExecutor {
 
         if (args.length == 0) {
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-playyer"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
             return true;
 
         } else if (args.length == 1) {
@@ -36,9 +36,9 @@ public class KillCommand implements CommandExecutor {
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.message"), player));
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staffer%", commandSender.getName()), player);
+                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staffer%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
                 player.setHealth(0);
