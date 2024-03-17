@@ -16,6 +16,7 @@ _A simple staff plugin_
 - /night [world] - Permission: "ss.night"
 - /kill <player> - Permission: "ss.kill"
 - /heal [player] - Permission: "ss.heal" & "ss.heal.other"
+- /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
 
 **Advanced:**
 - ComingSoon
