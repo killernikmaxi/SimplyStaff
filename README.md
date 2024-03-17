@@ -19,9 +19,12 @@ _A simple and lightweight staff plugin_
 - /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
 - /fly [player] - Permission: "ss.fly" & "ss.fly.other"
 - /clear [player] - Permission: "ss.clear" & "ss.clear.other"
+- /tp (player) - Permission: "ss.tp"
+- /tph (player) - Permission: "ss.tph"
+- /tppos (x) (y) (z) - Permission: "ss.tppos"
 
 **Advanced:**
-- ComingSoon
+- /serverinfo - Permission: "ss.serverinfo"
   
 **Other:**
 - Staff alert - Permission: "ss.alert"
