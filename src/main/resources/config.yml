@@ -13,13 +13,13 @@
 #
 
 #
-# MESSAGE PLACHEHOLDERS:
+# MESSAGE PLACEHOLDERS:
 #
 # » %player% - Name of the player
 #
 
-# Enable or disable alerts to staff who have permission "ss.alert", example:
-# SimplyStaff » Player has set his gamemode of creative
+# Enable or disable alerts to staff members who have permission "ss.alert", example:
+# SimplyStaff » Player has set his gamemode to creative
 STAFF-ALERTS:
   enabled: true
   join-staff: "&b&lSimplyStaff &8» &a%player% &7joined the server!"
@@ -33,19 +33,19 @@ COMMANDS:
 
     survival:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is survival"
-      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &asurvival"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &asurvival"
 
     creative:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is creative"
-      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &acreative"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &acreative"
 
     adventure:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is adventure"
-      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &aadventure"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &aadventure"
 
     spectator:
       message: "&b&lSimplyStaff &8» &aYour gamemode now is spectator"
-      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode of &aspectator"
+      alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &aspectator"
 
   Basic:
     day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
