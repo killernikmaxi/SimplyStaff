@@ -66,6 +66,9 @@ COMMANDS:
     heal:
       message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
       alert: "&b&lSimplyStaff &8» &a%staff% has healed %player%"
+    clear:
+      message: "&b&lSimplyStaff &8» &aYou have cleared the inventory of %player%"
+      alert: "&b&lSimplyStaff &8» &a%staff% has cleared the inventory of %player%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"

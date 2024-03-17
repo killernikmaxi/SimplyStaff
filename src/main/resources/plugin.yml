@@ -37,3 +37,6 @@ commands:
   fly:
     description: Fly Command
     usage: /fly
+  clear:
+    description: Clear Command
+    usage: /clear
