@@ -13,13 +13,12 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GodmodeCommand implements CommandExecutor, Listener {
 
-    private final List<Player> godmode = new ArrayList<>();
+    private final Set<Player> godmode = new HashSet<>();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
