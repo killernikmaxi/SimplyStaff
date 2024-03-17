@@ -18,6 +18,7 @@ _A simple and lightweight staff plugin_
 - /heal [player] - Permission: "ss.heal" & "ss.heal.other"
 - /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
 - /fly [player] - Permission: "ss.fly" & "ss.fly.other"
+- /clear [player] - Permission: "ss.clear" & "ss.clear.other"
 
 **Advanced:**
 - ComingSoon
