@@ -53,6 +53,12 @@ COMMANDS:
     kill:
       message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
       alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
+    godmode:
+      setted: ""
+      removed: ""
+    heal:
+      message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
+      alert: "&b&lSimplyStaff &8» &a%staff% has healed %player%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
