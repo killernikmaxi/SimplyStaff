@@ -15,7 +15,7 @@ public class GamemodeAdventure implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"));
+            sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"), null));
             return true;
         }
 

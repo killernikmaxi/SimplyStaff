@@ -59,7 +59,7 @@ OTHER:
 
 # Error
 ERROR:
-  only-player: "SIMPLYSTAFF » Error, Only player can execute this command!"
+  only-player: "&b&lSimplyStaff &8» &cError, Only player can execute this command!"
   no-permission: "&b&lSimplyStaff &8» &cYou don't have permission to do this"
   incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
   specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
