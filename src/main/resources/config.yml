@@ -48,8 +48,8 @@ COMMANDS:
       alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &aspectator"
 
   Basic:
-    day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
-    night: "&b&lSimplyStaff &8» &aTime night successfully set to the world"
+    day: "&b&lSimplyStaff &8» &aTime set to day successfully in the world"
+    night: "&b&lSimplyStaff &8» &aTime set to night successfully in the world"
     kill:
       message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
       alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
@@ -71,11 +71,11 @@ COMMANDS:
       alert: "&b&lSimplyStaff &8» &7%staff% has cleared the inventory of &a%player%"
 
 OTHER:
-  config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
+  config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded successfully!"
 
 # Error
 ERROR:
-  only-player: "&b&lSimplyStaff &8» &cError, Only player can execute this command!"
+  only-player: "&b&lSimplyStaff &8» &cError: Only players can execute this command!"
   no-permission: "&b&lSimplyStaff &8» &cYou don't have permission to do this"
   incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
   specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
