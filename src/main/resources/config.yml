@@ -69,6 +69,9 @@ COMMANDS:
     clear:
       message: "&b&lSimplyStaff &8» &aYou have cleared the inventory of %player%"
       alert: "&b&lSimplyStaff &8» &7%staff% has cleared the inventory of &a%player%"
+    teleport:
+      message: "&b&lSimplyStaff &8» &aYou have teleported to %player%"
+      alert: "&b&lSimplyStaff &8» &7%staff% teleported to &a%player%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded successfully!"
