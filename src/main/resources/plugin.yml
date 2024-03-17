@@ -26,3 +26,11 @@ commands:
   ss:
     description: Main Command
     usage: /ss
+  godmode:
+    description: Godmode Command
+    usage: /godmode
+  heal:
+    description: Heal Command
+    usage: /heal
+    aliases:
+      - god

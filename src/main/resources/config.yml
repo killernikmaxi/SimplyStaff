@@ -56,6 +56,8 @@ COMMANDS:
     godmode:
       setted: ""
       removed: ""
+      alert-setted: "&b&lSimplyStaff &8» &a%staff% has setted godmode to %player%"
+      alert-removed: "&b&lSimplyStaff &8» &a%staff% has removed godmode to %player%"
     heal:
       message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
       alert: "&b&lSimplyStaff &8» &a%staff% has healed %player%"
