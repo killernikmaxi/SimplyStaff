@@ -34,6 +34,11 @@ public class ClearCommand implements CommandExecutor {
 
         } else if (args.length == 1) {
 
+            if (!commandSender.hasPermission("ss.clear.other")) {
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                return true;
+            }
+
             String pname = args[0];
             Player player = Bukkit.getPlayer(pname);
 
