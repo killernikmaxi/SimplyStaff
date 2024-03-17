@@ -1,8 +1,7 @@
 # SimplyStaff
 _A simple staff plugin_
 
-[] = Optional
-<> = Required
+[] = Optional | <> = Required
 
 **Features:**
 
