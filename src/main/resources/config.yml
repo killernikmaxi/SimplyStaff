@@ -55,9 +55,14 @@ COMMANDS:
       alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
     godmode:
       setted: "&b&lSimplyStaff &8» &aYou have successfully setted godmode to %player%"
-      removed: "&b&lSimplyStaff &8» &aYou have successfully setted godmode to %player%"
+      removed: "&b&lSimplyStaff &8» &aYou have successfully removed godmode to %player%"
       alert-setted: "&b&lSimplyStaff &8» &a%staff% has setted godmode to %player%"
       alert-removed: "&b&lSimplyStaff &8» &a%staff% has removed godmode to %player%"
+    fly:
+      setted: "&b&lSimplyStaff &8» &aYou have successfully enabled fly to %player%"
+      removed: "&b&lSimplyStaff &8» &aYou have successfully removed fly to %player%"
+      alert-setted: "&b&lSimplyStaff &8» &a%staff% has enabled fly to %player%"
+      alert-removed: "&b&lSimplyStaff &8» &a%staff% has removed fly to %player%"
     heal:
       message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
       alert: "&b&lSimplyStaff &8» &a%staff% has healed %player%"
