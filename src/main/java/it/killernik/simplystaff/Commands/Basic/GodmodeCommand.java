@@ -8,8 +8,18 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-public class GodmodeCommand implements CommandExecutor {
+import java.util.HashSet;
+import java.util.Set;
+
+public class GodmodeCommand implements CommandExecutor, Listener {
+
+    private final Set<Player> godmode = new HashSet<>();
+
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
 
@@ -22,12 +32,12 @@ public class GodmodeCommand implements CommandExecutor {
 
             if (commandSender instanceof Player) {
 
-                if (((Player) commandSender).isInvulnerable()) {
+                if (godmode.contains((Player) commandSender)) {
 
                     StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.removed"), ((Player) commandSender)));
 
-                    ((Player) commandSender).setInvulnerable(false);
+                    godmode.remove((Player) commandSender);
                     return true;
 
                 }
@@ -35,7 +45,7 @@ public class GodmodeCommand implements CommandExecutor {
                 StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.setted"), ((Player) commandSender)));
 
-                ((Player) commandSender).setInvulnerable(true);
+                godmode.add((Player) commandSender);
                 return true;
 
             } else {
@@ -58,7 +68,7 @@ public class GodmodeCommand implements CommandExecutor {
                 return true;
             } else {
 
-                if ((player).isInvulnerable()) {
+                if (godmode.contains(player)) {
 
                     if (commandSender instanceof Player) {
                         StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), player);
@@ -67,7 +77,7 @@ public class GodmodeCommand implements CommandExecutor {
                     }
 
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.removed"), (player)));
-                    (player).setInvulnerable(false);
+                    godmode.remove(player);
                     return true;
 
                 }
@@ -78,8 +88,8 @@ public class GodmodeCommand implements CommandExecutor {
                     StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.setted"), (player)));
-                (player).setInvulnerable(true);
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.setted"), player));
+                godmode.add(player);
 
                 return true;
             }
@@ -87,6 +97,26 @@ public class GodmodeCommand implements CommandExecutor {
         } else {
             commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player player = (Player) event.getEntity();
+            if (godmode.contains(player))
+                event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onFoodLevelChange(FoodLevelChangeEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player player = (Player) event.getEntity();
+            if (godmode.contains(player)) {
+                event.setCancelled(true);
+                player.setFoodLevel(20);
+            }
         }
     }
 }

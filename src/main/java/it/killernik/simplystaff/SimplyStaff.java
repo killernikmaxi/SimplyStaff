@@ -29,6 +29,7 @@ public final class SimplyStaff extends JavaPlugin {
         saveDefaultConfig();
 
         Bukkit.getPluginManager().registerEvents((Listener) new it.killernik.simplystaff.Listener.PlayerListener(), (Plugin) this);
+        Bukkit.getPluginManager().registerEvents((Listener) new it.killernik.simplystaff.Commands.Basic.GodmodeCommand(), (Plugin) this);
         getCommand("gmc").setExecutor(new GamemodeCreative());
         getCommand("gma").setExecutor(new GamemodeAdventure());
         getCommand("gmsp").setExecutor(new GamemodeSpectator());

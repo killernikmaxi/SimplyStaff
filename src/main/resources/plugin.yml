@@ -29,8 +29,8 @@ commands:
   godmode:
     description: Godmode Command
     usage: /godmode
+    aliases:
+      - god
   heal:
     description: Heal Command
     usage: /heal
-    aliases:
-      - god
