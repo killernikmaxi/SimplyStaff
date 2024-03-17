@@ -48,6 +48,7 @@ COMMANDS:
   Basic:
     day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
     night: "&b&lSimplyStaff &8» &aTime night successfully set to the world"
+    kill: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
@@ -59,3 +60,5 @@ ERROR:
   incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
   specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
   non-existent-world: "&b&lSimplyStaff &8» &cNon-existent world"
+  specify-player: "&b&lSimplyStaff &8» &cSpecify the player!"
+  non-existent-player: "&b&lSimplyStaff &8» &cNon-existent player"

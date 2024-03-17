@@ -1,4 +1,9 @@
 package it.killernik.simplystaff.Listener;
 
-public class PlayerListener {
+import org.bukkit.event.Listener;
+
+public class PlayerListener implements Listener {
+
+
+
 }

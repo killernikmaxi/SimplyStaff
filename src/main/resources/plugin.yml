@@ -14,6 +14,15 @@ commands:
   gms:
     description: Gamemode survival
     usage: /gms
+  day:
+    description: Day Command
+    usage: /day
+  night:
+    description: Night Command
+    usage: /night
+  kill:
+    description: Kill Command
+    usage: /kill
   ss:
     description: Main Command
     usage: /ss
