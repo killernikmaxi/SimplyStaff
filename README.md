@@ -1,7 +1,7 @@
 # SimplyStaff
 _A simple and lightweight staff plugin_
 
-[] = Optional | <> = Required
+[] = Optional | () = Required
 
 ## Features:
 
@@ -14,7 +14,7 @@ _A simple and lightweight staff plugin_
 **Basic:**
 - /day [world] - Permission: "ss.day"
 - /night [world] - Permission: "ss.night"
-- /kill <player> - Permission: "ss.kill"
+- /kill (player) - Permission: "ss.kill"
 - /heal [player] - Permission: "ss.heal" & "ss.heal.other"
 - /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
 - /fly [player] - Permission: "ss.fly" & "ss.fly.other"
