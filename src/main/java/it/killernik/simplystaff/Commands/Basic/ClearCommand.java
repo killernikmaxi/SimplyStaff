@@ -29,6 +29,7 @@ public class ClearCommand implements CommandExecutor {
 
                 ((Player) commandSender).getInventory().clear();
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.message"), (Player) commandSender));
+                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
 
             }
 
