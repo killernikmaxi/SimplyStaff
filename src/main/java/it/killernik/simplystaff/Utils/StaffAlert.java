@@ -15,7 +15,7 @@ public class StaffAlert {
 
     // UTIL FOR MESSAGE SENDING
     public static void alert(String message, Player player) {
-        if (SimplyStaff.getInstance().getConfig().getBoolean("COMMANDS.staff-alerts")) {
+        if (SimplyStaff.getInstance().getConfig().getBoolean("STAFF-ALERTS.enabled")) {
             for (Player online : Bukkit.getOnlinePlayers()) {
                 if (online.hasPermission("ss.alert")) {
                     online.sendMessage(MessageUtil.message(message, player));

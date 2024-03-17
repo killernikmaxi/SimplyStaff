@@ -18,11 +18,13 @@
 # » %player% - Name of the player
 #
 
-COMMANDS:
+# Enable or disable alerts to staff who have permission "ss.alert", example:
+# SimplyStaff » Player has set his gamemode of creative
+STAFF-ALERTS:
+  enabled: true
+  join-staff: "&b&lSimplyStaff &8» &7%player% joined the server!"
 
-  # Enable or disable alerts to staff who have permission "ss.alert", example:
-  # SimplyStaff » Player has set his gamemode of creative
-  staff-alerts: true
+COMMANDS:
 
   # Gamemodes
   Gamemodes:
