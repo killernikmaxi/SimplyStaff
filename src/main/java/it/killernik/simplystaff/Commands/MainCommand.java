@@ -13,15 +13,27 @@ public class MainCommand implements CommandExecutor {
         if (args.length == 0) {
 
             if (!sender.hasPermission("ss.help")) {
-                sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                sender.sendMessage(MessageUtil.message("&b&lSimplyStaff &8» &cSimplyStaff by killernik", null));
                 return true;
             }
 
             sender.sendMessage(MessageUtil.message("&b&lSimplyStaff &7- by killernik", null));
-            sender.sendMessage(MessageUtil.message("&7&oAlias: /simplestaff & /ssk", null));
+            sender.sendMessage(MessageUtil.message("&7&oAlias: /simplestaff & /ss", null));
             sender.sendMessage("");
             sender.sendMessage(MessageUtil.message("&8» &a/ss reload", null));
             sender.sendMessage(MessageUtil.message("&8» &a/gm(c|s|sp|a) [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/day [world]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/night [world]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/kill [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/clear [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/heal [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/godmode [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/kill [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/fly [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/tp [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/tph [player]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/tppos [x] [y] [z]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/serverinfo", null));
 
         } else {
 

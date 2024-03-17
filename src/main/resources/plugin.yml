@@ -40,3 +40,23 @@ commands:
   clear:
     description: Clear Command
     usage: /clear
+  teleport:
+    description: Teleport Command
+    usage: /teleport
+    aliases:
+      - tp
+  teleporthere:
+    description: Teleporthere Command
+    usage: /teleporthere
+    aliases:
+      - tph
+  teleportpos:
+    description: Teleportpos Command
+    usage: /teleportpos
+    aliases:
+      - tppos
+  serverinfo:
+    description: Serverinfo Command
+    usage: /serverinfo
+    aliases:
+      - si

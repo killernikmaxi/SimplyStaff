@@ -1,6 +1,10 @@
 package it.killernik.simplystaff;
 
+import it.killernik.simplystaff.Commands.Advanced.ServerInfoCommand;
 import it.killernik.simplystaff.Commands.Basic.*;
+import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportCommand;
+import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportHereCommand;
+import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportPosCommand;
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeAdventure;
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeCreative;
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeSpectator;
@@ -42,6 +46,10 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("clear").setExecutor(new ClearCommand());
+        getCommand("teleport").setExecutor(new TeleportCommand());
+        getCommand("teleportpos").setExecutor(new TeleportPosCommand());
+        getCommand("teleporthere").setExecutor(new TeleportHereCommand());
+        getCommand("serverinfo").setExecutor(new ServerInfoCommand());
 
         Bukkit.getLogger().info("[SimlyStaff] enabled with success");
     }

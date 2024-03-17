@@ -16,6 +16,7 @@
 # MESSAGE PLACEHOLDERS:
 #
 # » %player% - Name of the player
+# » %staff% - Name of the staff
 #
 
 # Enable or disable alerts to staff members who have permission "ss.alert", example:
@@ -60,7 +61,7 @@ COMMANDS:
       alert-removed: "&b&lSimplyStaff &8» &7%staff% has &cremoved &7godmode to &a%player%"
     fly:
       enabled: "&b&lSimplyStaff &8» &aYou have successfully enabled fly to %player%"
-      disabled: "&b&lSimplyStaff &8» &aYou have successfully removed fly to %player%"
+      disabled: "&b&lSimplyStaff &8» &aYou have successfully disabled fly to %player%"
       alert-enabled: "&b&lSimplyStaff &8» &7%staff% has &aenabled &7fly to &a%player%"
       alert-disabled: "&b&lSimplyStaff &8» &7%staff% has &cdisabled &7fly to &a%player%"
     heal:
@@ -70,18 +71,26 @@ COMMANDS:
       message: "&b&lSimplyStaff &8» &aYou have cleared the inventory of %player%"
       alert: "&b&lSimplyStaff &8» &7%staff% has cleared the inventory of &a%player%"
     teleport:
-      message: "&b&lSimplyStaff &8» &aYou have teleported to %player%"
+      message: "&b&lSimplyStaff &8» &aYou teleported to %player%"
       alert: "&b&lSimplyStaff &8» &7%staff% teleported to &a%player%"
+    teleporthere:
+      message: "&b&lSimplyStaff &8» &aYou teleported %player% to you"
+      alert: "&b&lSimplyStaff &8» &7%staff% teleported &a%player% &7to him"
+    teleportpos:
+      message: "&b&lSimplyStaff &8» &aYou teleported to x: %x% y: %y% z: %z%"
+      alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to x: %x% y: %y% z: %z%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded successfully!"
+  server: "Minigame"
 
 # Error
 ERROR:
   only-player: "&b&lSimplyStaff &8» &cError: Only players can execute this command!"
-  no-permission: "&b&lSimplyStaff &8» &cYou don't have permission to do this"
-  incorrect-syntax: "&b&lSimplyStaff &8» &cIncorrect syntax!"
+  no-permission: "&b&lSimplyStaff &8» &cError: You don't have permission to do this"
+  incorrect-syntax: "&b&lSimplyStaff &8» &cError: Incorrect syntax!"
   specify-world: "&b&lSimplyStaff &8» &cSpecify the world!"
-  non-existent-world: "&b&lSimplyStaff &8» &cNon-existent world"
+  non-existent-world: "&b&lSimplyStaff &8» &cError: Non-existent world"
   specify-player: "&b&lSimplyStaff &8» &cSpecify the player!"
-  non-existent-player: "&b&lSimplyStaff &8» &cNon-existent player"
+  non-existent-player: "&b&lSimplyStaff &8» &cError: Non-existent player"
+  invalid-coordinates: "&b&lSimplyStaff &8» &cError: invalid coordinates!"
