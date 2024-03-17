@@ -1,5 +1,5 @@
 # SimplyStaff
-_A simple staff plugin_
+_A simple and lightweight staff plugin_
 
 [] = Optional | <> = Required
 
@@ -17,6 +17,7 @@ _A simple staff plugin_
 - /kill <player> - Permission: "ss.kill"
 - /heal [player] - Permission: "ss.heal" & "ss.heal.other"
 - /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
+- /fly [player] - Permission: "ss.fly" & "ss.fly.other"
 
 **Advanced:**
 - ComingSoon
