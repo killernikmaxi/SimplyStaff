@@ -3,20 +3,20 @@ _A simple staff plugin_
 
 [] = Optional | <> = Required
 
-**Features:**
+## Features:
 
-Gamemodes:
+**Gamemodes:**
 - /gmc - Permission: "ss.gmc"
 - /gms - Permission: "ss.gms"
 - /gma - Permission: "ss.gma"
 - /gmsp - Permission: "ss.gmsp"
 
-Basic:
+**Basic:**
 - /day [world] - Permission: "ss.day"
 - /night [world] - Permission: "ss.night"
 
-Advanced:
+**Advanced:**
 - ComingSoon
   
-Other:
+**Other:**
 - Staff alert - Permission: "ss.alert"
