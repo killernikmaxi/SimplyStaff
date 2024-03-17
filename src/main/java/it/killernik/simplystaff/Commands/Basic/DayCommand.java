@@ -3,12 +3,10 @@ package it.killernik.simplystaff.Commands.Basic;
 import it.killernik.simplystaff.SimplyStaff;
 import it.killernik.simplystaff.Utils.MessageUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.world.WorldLoadEvent;
 
 public class DayCommand implements CommandExecutor {
     @Override

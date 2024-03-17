@@ -5,5 +5,5 @@
 - Basic commands (/kill - /ss - /simplystaff - etc..)
 - Bungee support (At the end)
 - Version: Lite & Premium
-- Database per multi server support
+- Database for multi server support staff mode
 - Permission for command

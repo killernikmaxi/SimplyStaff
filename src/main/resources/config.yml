@@ -20,12 +20,12 @@
 
 COMMANDS:
 
+  # Enable or disable alerts to staff who have permission "ss.alert", example:
+  # SimplyStaff » Player has set his gamemode of creative
+  staff-alerts: true
+
   # Gamemodes
   Gamemodes:
-
-    # Enable or disable alerts to staff who have permission "ss.alert", example:
-    # SimplyStaff » Player has set his gamemode of creative
-    staff-alerts: true
 
     error: "&b&lSimplyStaff &8» &cYou are already in this gamemode"
 
@@ -47,6 +47,7 @@ COMMANDS:
 
   Basic:
     day: "&b&lSimplyStaff &8» &aTime day successfully set to the world"
+    night: "&b&lSimplyStaff &8» &aTime night successfully set to the world"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded!"
