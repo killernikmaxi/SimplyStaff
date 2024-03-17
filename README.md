@@ -14,9 +14,11 @@ _A simple staff plugin_
 **Basic:**
 - /day [world] - Permission: "ss.day"
 - /night [world] - Permission: "ss.night"
+- /kill <player> - Permission: "ss.kill"
 
 **Advanced:**
 - ComingSoon
   
 **Other:**
 - Staff alert - Permission: "ss.alert"
+- Staff join alert - Permission: "ss.staff"
