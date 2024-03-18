@@ -5,6 +5,15 @@ _A simple and lightweight staff plugin_
 
 ## Features:
 
+
+**Ready for production server**"
+
+**Highly configurable**
+
+**No stupid junk**
+
+**Support discord (https://discord.com/invite/qHn2RTyTV7)**
+
 **Gamemodes:**
 - /gmc - Permission: "ss.gmc"
 - /gms - Permission: "ss.gms"
@@ -19,12 +28,13 @@ _A simple and lightweight staff plugin_
 - /godmode [player] - Permission: "ss.godmode" & "ss.godmode.other" (Alias: "/god")
 - /fly [player] - Permission: "ss.fly" & "ss.fly.other"
 - /clear [player] - Permission: "ss.clear" & "ss.clear.other"
-- /tp (player) - Permission: "ss.tp"
-- /tph (player) - Permission: "ss.tph"
-- /tppos (x) (y) (z) - Permission: "ss.tppos"
+- /tp (player) - Permission: "ss.tp" (Alias: "/teleport")
+- /tph (player) - Permission: "ss.tph" (Alias: "/teleporthere")
+- /tppos (x) (y) (z) - Permission: "ss.tppos" (Alias: "/teleportpos")
 
 **Advanced:**
-- /serverinfo - Permission: "ss.serverinfo"
+- /serverinfo - Permission: "ss.serverinfo" (Alias: "/si")
+- /sudo (player) (command/message) - Permission: "ss.sudo"
   
 **Other:**
 - Staff alert - Permission: "ss.alert"
