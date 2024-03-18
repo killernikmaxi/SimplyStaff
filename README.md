@@ -5,6 +5,7 @@ _A simple and lightweight staff plugin_
 
 ## Features:
 
+
 **Ready for production server**
 **Highly configurable**
 **No stupid junk**
