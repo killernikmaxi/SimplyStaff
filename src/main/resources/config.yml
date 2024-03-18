@@ -17,6 +17,7 @@
 #
 # » %player% - Name of the player
 # » %staff% - Name of the staff
+# » %command% - Name of the command (sudo only)
 #
 
 # Enable or disable alerts to staff members who have permission "ss.alert", example:
@@ -79,6 +80,11 @@ COMMANDS:
     teleportpos:
       message: "&b&lSimplyStaff &8» &aYou teleported to x: %x% y: %y% z: %z%"
       alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to x: %x% y: %y% z: %z%"
+
+  Advanced:
+    sudo:
+      message: "&b&lSimplyStaff &8» &aYou have successfully forced %player% to execute &c%command%"
+      alert: "&b&lSimplyStaff &8» &a%staff% has forced %player% to execute &c%command%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded successfully!"

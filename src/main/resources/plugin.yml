@@ -60,3 +60,6 @@ commands:
     usage: /serverinfo
     aliases:
       - si
+  sudo:
+    description: Sudo Command
+    usage: /sudo

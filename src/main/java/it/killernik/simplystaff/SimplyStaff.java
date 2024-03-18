@@ -1,6 +1,7 @@
 package it.killernik.simplystaff;
 
 import it.killernik.simplystaff.Commands.Advanced.ServerInfoCommand;
+import it.killernik.simplystaff.Commands.Advanced.SudoCommand;
 import it.killernik.simplystaff.Commands.Basic.*;
 import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportCommand;
 import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportHereCommand;
@@ -50,12 +51,13 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("teleportpos").setExecutor(new TeleportPosCommand());
         getCommand("teleporthere").setExecutor(new TeleportHereCommand());
         getCommand("serverinfo").setExecutor(new ServerInfoCommand());
+        getCommand("sudo").setExecutor(new SudoCommand());
 
-        Bukkit.getLogger().info("[SimlyStaff] enabled with success");
+        Bukkit.getLogger().info("[SimlyStaff] by killernik enabled");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("[SimlyStaff] disabled with success");
+        Bukkit.getLogger().info("[SimlyStaff] by killernik disabled");
     }
 }
