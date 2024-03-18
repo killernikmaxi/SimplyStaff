@@ -22,7 +22,7 @@
 # SimplyStaff » Player has set his gamemode to creative
 STAFF-ALERTS:
   enabled: true
-  join-staff: "&b&lSimplyStaff &8» &a%player% &7joined the server!"
+  join-staff: "&b&lSimplyStaff &8» &a%player% &7has joined the server!"
 
 COMMANDS:
 
@@ -54,9 +54,9 @@ COMMANDS:
       message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
       alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
     godmode:
-      setted: "&b&lSimplyStaff &8» &aYou have successfully setted godmode to %player%"
+      setted: "&b&lSimplyStaff &8» &aYou have successfully set godmode to %player%"
       removed: "&b&lSimplyStaff &8» &aYou have successfully removed godmode to %player%"
-      alert-setted: "&b&lSimplyStaff &8» &7%staff% has &asetted &7godmode to &a%player%"
+      alert-set: "&b&lSimplyStaff &8» &7%staff% has &asetted &7godmode to &a%player%"
       alert-removed: "&b&lSimplyStaff &8» &7%staff% has &cremoved &7godmode to &a%player%"
     fly:
       enabled: "&b&lSimplyStaff &8» &aYou have successfully enabled fly to %player%"
@@ -76,12 +76,12 @@ COMMANDS:
       message: "&b&lSimplyStaff &8» &aYou teleported %player% to you"
       alert: "&b&lSimplyStaff &8» &7%staff% teleported &a%player% &7to him"
     teleportpos:
-      message: "&b&lSimplyStaff &8» &aYou teleported to x: %x% y: %y% z: %z%"
+      message: "&b&lSimplyStaff &8» &aYou teleported to coordinates: 'x: %x% y: %y% z: %z%'"
       alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to x: %x% y: %y% z: %z%"
 
   Advanced:
     sudo:
-      message: "&b&lSimplyStaff &8» &aYou have successfully forced %player% to execute &c%command%"
+      message: "&b&lSimplyStaff &8» &aYou have successfully forced %player% to execute command &c%command%"
       alert: "&b&lSimplyStaff &8» &a%staff% has forced %player% to execute &c%command%"
 
 OTHER:
