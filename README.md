@@ -6,9 +6,12 @@ _A simple and lightweight staff plugin_
 ## Features:
 
 
-**Ready for production server**
+**Ready for production server**"
+
 **Highly configurable**
+
 **No stupid junk**
+
 **Support discord (https://discord.com/invite/qHn2RTyTV7)**
 
 **Gamemodes:**
