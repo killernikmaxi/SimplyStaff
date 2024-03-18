@@ -26,7 +26,7 @@ public class GodmodeCommand implements CommandExecutor, Listener {
         if (args.length == 0) {
 
             if (!commandSender.hasPermission("ss.godmode")) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                 return true;
             }
 
@@ -34,29 +34,29 @@ public class GodmodeCommand implements CommandExecutor, Listener {
 
                 if (godmode.contains((Player) commandSender)) {
 
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
-                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.removed"), ((Player) commandSender)));
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), ((Player) commandSender)));
 
                     godmode.remove((Player) commandSender);
                     return true;
 
                 }
 
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.setted"), ((Player) commandSender)));
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.setted"), ((Player) commandSender)));
 
                 godmode.add((Player) commandSender);
                 return true;
 
             } else {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
                 return true;
             }
 
         } else if (args.length == 1) {
 
             if (!commandSender.hasPermission("ss.godmode.other")) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                 return true;
             }
 
@@ -64,38 +64,38 @@ public class GodmodeCommand implements CommandExecutor, Listener {
             Player player = Bukkit.getPlayer(pname);
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
                 return true;
             } else {
 
                 if (godmode.contains(player)) {
 
                     if (commandSender instanceof Player) {
-                        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), player);
                     } else {
-                        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", "&4&lConsole"), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", "&4&lConsole"), player);
                     }
 
-                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.removed"), (player)));
+                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), (player)));
                     godmode.remove(player);
                     return true;
 
                 }
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.godmode.setted"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.setted"), player));
                 godmode.add(player);
 
                 return true;
             }
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
         }
     }

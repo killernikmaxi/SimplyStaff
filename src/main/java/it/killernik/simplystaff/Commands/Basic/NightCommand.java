@@ -13,7 +13,7 @@ public class NightCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
 
         if (!commandSender.hasPermission("ss.night")) {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
             return true;
         }
 
@@ -21,13 +21,13 @@ public class NightCommand implements CommandExecutor {
 
             if (!(commandSender instanceof Player)) {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-world"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-world"), null));
                 return true;
 
             } else {
 
                 ((Player) commandSender).getWorld().setTime(12000);
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.night"), (Player) commandSender));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.night"), (Player) commandSender));
 
             }
 
@@ -36,16 +36,16 @@ public class NightCommand implements CommandExecutor {
             String worldname = args[0];
 
             if (Bukkit.getWorld(worldname) == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-world"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-world"), null));
                 return true;
             }
 
             Bukkit.getWorld(worldname).setTime(12000);
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.night"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.night"), null));
 
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
         }
 
         return true;

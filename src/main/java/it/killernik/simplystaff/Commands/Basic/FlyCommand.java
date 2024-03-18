@@ -17,7 +17,7 @@ public class FlyCommand implements CommandExecutor, Listener {
         if (args.length == 0) {
 
             if (!commandSender.hasPermission("ss.fly")) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                 return true;
             }
 
@@ -25,29 +25,29 @@ public class FlyCommand implements CommandExecutor, Listener {
 
                 if (((Player) commandSender).getAllowFlight()) {
 
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
-                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.disabled"), ((Player) commandSender)));
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.disabled"), ((Player) commandSender)));
 
                     ((Player) commandSender).setAllowFlight(false);
                     return true;
 
                 }
 
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.enabled"), ((Player) commandSender)));
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.enabled"), ((Player) commandSender)));
 
                 ((Player) commandSender).setAllowFlight(true);
                 return true;
 
             } else {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
                 return true;
             }
 
         } else if (args.length == 1) {
 
             if (!commandSender.hasPermission("ss.fly.other")) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                 return true;
             }
 
@@ -55,38 +55,38 @@ public class FlyCommand implements CommandExecutor, Listener {
             Player player = Bukkit.getPlayer(pname);
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
                 return true;
             } else {
 
                 if (player.getAllowFlight()) {
 
                     if (commandSender instanceof Player) {
-                        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", commandSender.getName()), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", commandSender.getName()), player);
                     } else {
-                        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", "&4&lConsole"), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", "&4&lConsole"), player);
                     }
 
-                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.disabled"), (player)));
+                    commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.disabled"), (player)));
                     player.setAllowFlight(false);
                     return true;
 
                 }
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", commandSender.getName()), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.fly.enabled"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.enabled"), player));
                 player.setAllowFlight(true);
 
                 return true;
             }
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
         }
     }

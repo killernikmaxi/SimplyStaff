@@ -14,13 +14,13 @@ public class KillCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
 
         if (!commandSender.hasPermission("ss.kill")) {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
             return true;
         }
 
         if (args.length == 0) {
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
             return true;
 
         } else if (args.length == 1) {
@@ -29,16 +29,16 @@ public class KillCommand implements CommandExecutor {
             Player player = Bukkit.getPlayer(pname);
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
                 return true;
             } else {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.message"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.message"), player));
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", commandSender.getName()), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
                 player.setHealth(0);
@@ -47,7 +47,7 @@ public class KillCommand implements CommandExecutor {
             }
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
         }
     }

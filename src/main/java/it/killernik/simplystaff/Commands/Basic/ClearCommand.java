@@ -14,7 +14,7 @@ public class ClearCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
 
         if (!commandSender.hasPermission("ss.clear")) {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
             return true;
         }
 
@@ -22,21 +22,21 @@ public class ClearCommand implements CommandExecutor {
 
             if (!(commandSender instanceof Player)) {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
                 return true;
 
             } else {
 
                 ((Player) commandSender).getInventory().clear();
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.message"), (Player) commandSender));
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.clear.message"), (Player) commandSender));
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
 
             }
 
         } else if (args.length == 1) {
 
             if (!commandSender.hasPermission("ss.clear.other")) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                 return true;
             }
 
@@ -44,22 +44,22 @@ public class ClearCommand implements CommandExecutor {
             Player player = Bukkit.getPlayer(pname);
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-world"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-world"), null));
                 return true;
             }
 
             player.getInventory().clear();
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.message"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.clear.message"), null));
             if (commandSender instanceof Player) {
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", commandSender.getName()), player);
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", commandSender.getName()), player);
             } else {
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", "&4&lConsole"), player);
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.clear.alert").replaceAll("%staff%", "&4&lConsole"), player);
             }
 
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
         }
 
 

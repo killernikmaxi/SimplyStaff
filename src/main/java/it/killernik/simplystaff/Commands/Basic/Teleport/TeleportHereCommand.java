@@ -16,18 +16,18 @@ public class TeleportHereCommand implements CommandExecutor {
 
         if (!(commandSender instanceof Player)) {
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.only-player"), null));
             return true;
         }
 
         if (!commandSender.hasPermission("ss.tph")) {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
             return true;
         }
 
         if (args.length == 0) {
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
             return true;
 
         } else if (args.length == 1) {
@@ -36,19 +36,19 @@ public class TeleportHereCommand implements CommandExecutor {
             Player player = Bukkit.getPlayer(pname);
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
                 return true;
             } else {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.teleporthere.message"), player));
-                StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Basic.teleporthere.alert").replaceAll("%staff%", commandSender.getName()), player);
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.teleporthere.message"), player));
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.teleporthere.alert").replaceAll("%staff%", commandSender.getName()), player);
                 player.teleport(((Player) commandSender).getLocation());
 
                 return true;
             }
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
         }
     }

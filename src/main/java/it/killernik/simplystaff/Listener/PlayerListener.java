@@ -14,7 +14,7 @@ public class PlayerListener implements Listener {
         Player p = e.getPlayer();
 
         if (!p.hasPermission("ss.staff")) return;
-        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("STAFF-ALERTS.join-staff"), p);
+        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("STAFF-ALERTS.join-staff"), p);
 
     }
 }

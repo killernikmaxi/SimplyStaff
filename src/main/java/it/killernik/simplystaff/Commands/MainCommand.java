@@ -40,12 +40,12 @@ public class MainCommand implements CommandExecutor {
             if (args[0].equalsIgnoreCase("reload")) {
 
                 if (!sender.hasPermission("ss.reload")) {
-                    sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+                    sender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
                     return true;
                 }
 
-                SimplyStaff.getInstance().reloadConfig();
-                sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("OTHER.config-reloaded"), null));
+                SimplyStaff.INSTANCE.reloadConfig();
+                sender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("OTHER.config-reloaded"), null));
             }
         }
 

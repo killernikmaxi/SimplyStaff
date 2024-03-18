@@ -14,13 +14,13 @@ public class SudoCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
 
         if (!commandSender.hasPermission("ss.sudo")) {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), null));
             return true;
         }
 
         if (args.length == 0) {
 
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.specify-player"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.specify-player"), null));
             return true;
 
         } else if (args.length == 2) {
@@ -30,17 +30,17 @@ public class SudoCommand implements CommandExecutor {
             String commandtoexecute = args[0];
 
             if (player == null) {
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.non-existent-player"), null));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
                 return true;
 
             } else {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Advanced.sudo.message"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.message"), player));
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", commandSender.getName()).replaceAll("%command%", commandtoexecute), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", commandSender.getName()).replaceAll("%command%", commandtoexecute), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", "&4&lConsole").replaceAll("%command%", commandtoexecute), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", "&4&lConsole").replaceAll("%command%", commandtoexecute), player);
                 }
 
                 player.performCommand(commandtoexecute);
@@ -49,7 +49,7 @@ public class SudoCommand implements CommandExecutor {
             }
 
         } else {
-            commandSender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.incorrect-syntax"), null));
+            commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
         }
     }

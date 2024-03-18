@@ -15,25 +15,25 @@ public class GamemodeSurvival implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.only-player"), null));
+            sender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.only-player"), null));
             return true;
         }
 
         Player player = (Player) sender;
 
         if (!player.hasPermission("ss.gms")) {
-            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("ERROR.no-permission"), player));
+            player.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.no-permission"), player));
             return true;
         }
 
         if (player.getGameMode() == GameMode.SURVIVAL) {
-            player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.error"), player));
+            player.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Gamemodes.error"), player));
             return true;
         }
 
         player.setGameMode(GameMode.SURVIVAL);
-        player.sendMessage(MessageUtil.message(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.survival.message"), player));
-        StaffAlert.alert(SimplyStaff.getInstance().getConfig().getString("COMMANDS.Gamemodes.survival.alert"), player);
+        player.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Gamemodes.survival.message"), player));
+        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Gamemodes.survival.alert"), player);
 
         return true;
     }
