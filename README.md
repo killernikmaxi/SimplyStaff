@@ -25,6 +25,7 @@ _A simple and lightweight staff plugin_
 
 **Advanced:**
 - /serverinfo - Permission: "ss.serverinfo" (Alias: "/si")
+- /sudo (player) (command/message) - Permission: "ss.sudo"
   
 **Other:**
 - Staff alert - Permission: "ss.alert"
