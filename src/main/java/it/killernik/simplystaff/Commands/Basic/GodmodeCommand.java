@@ -83,12 +83,12 @@ public class GodmodeCommand implements CommandExecutor, Listener {
                 }
 
                 if (commandSender instanceof Player) {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", "&4&lConsole"), player);
                 }
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.setted"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.set"), player));
                 godmode.add(player);
 
                 return true;

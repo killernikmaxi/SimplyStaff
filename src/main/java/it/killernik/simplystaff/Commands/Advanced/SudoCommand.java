@@ -25,9 +25,9 @@ public class SudoCommand implements CommandExecutor {
 
         } else if (args.length == 2) {
 
-            String pname = args[1];
+            String pname = args[0];
             Player player = Bukkit.getPlayer(pname);
-            String commandtoexecute = args[0];
+            String commandtoexecute = args[1];
 
             if (player == null) {
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.non-existent-player"), null));
