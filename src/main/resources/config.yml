@@ -49,36 +49,65 @@ COMMANDS:
       alert: "&b&lSimplyStaff &8» &a%player% &7has set his gamemode to &aspectator"
 
   Basic:
+
     day: "&b&lSimplyStaff &8» &aTime set to day successfully in the world"
     night: "&b&lSimplyStaff &8» &aTime set to night successfully in the world"
+
     kill:
       message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
       alert: "&b&lSimplyStaff &8» &a%staff% has killed %player%"
+
     godmode:
       setted: "&b&lSimplyStaff &8» &aYou have successfully set godmode to %player%"
       removed: "&b&lSimplyStaff &8» &aYou have successfully removed godmode to %player%"
       alert-set: "&b&lSimplyStaff &8» &7%staff% has &asetted &7godmode to &a%player%"
       alert-removed: "&b&lSimplyStaff &8» &7%staff% has &cremoved &7godmode to &a%player%"
+
     fly:
       enabled: "&b&lSimplyStaff &8» &aYou have successfully enabled fly to %player%"
       disabled: "&b&lSimplyStaff &8» &aYou have successfully disabled fly to %player%"
       alert-enabled: "&b&lSimplyStaff &8» &7%staff% has &aenabled &7fly to &a%player%"
       alert-disabled: "&b&lSimplyStaff &8» &7%staff% has &cdisabled &7fly to &a%player%"
+
     heal:
       message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
       alert: "&b&lSimplyStaff &8» &7%staff% has healed &a%player%"
+
     clear:
       message: "&b&lSimplyStaff &8» &aYou have cleared the inventory of %player%"
       alert: "&b&lSimplyStaff &8» &7%staff% has cleared the inventory of &a%player%"
+
     teleport:
       message: "&b&lSimplyStaff &8» &aYou teleported to %player%"
       alert: "&b&lSimplyStaff &8» &7%staff% teleported to &a%player%"
+
     teleporthere:
       message: "&b&lSimplyStaff &8» &aYou teleported %player% to you"
       alert: "&b&lSimplyStaff &8» &7%staff% teleported &a%player% &7to him"
+
     teleportpos:
       message: "&b&lSimplyStaff &8» &aYou teleported to coordinates: 'x: %x% y: %y% z: %z%'"
       alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to x: %x% y: %y% z: %z%"
+
+    freeze:
+      freeze-message: "&b&lSimplyStaff &8» &aYou have successfully frozen %player%"
+      freeze-alert: "&b&lSimplyStaff &8» &a%staff% has frozen %player%"
+      unfreeze-message: "&b&lSimplyStaff &8» &aYou have successfully unfrozen %player%"
+      unfreeze-alert: "&b&lSimplyStaff &8» &a%staff% has unfrozen %player%"
+      freeze-player-title:
+        title: "&4&lYou are frozen!"
+        subtitle: "&cplay.yourserver.com"
+      unfreeze-player-title:
+        title: "&a&lYou are unfrozen!"
+        subtitle: "&cplay.yourserver.com"
+      freeze-player-message: "&4&lYou are frozen!"
+      unfreeze-player-message: "&a&lYou are unfrozen!"
+      block-chat:
+        enabled: true
+        message: "Error!"
+      block-command:
+        enabled: true
+        message: "Error!"
 
   Advanced:
     sudo:

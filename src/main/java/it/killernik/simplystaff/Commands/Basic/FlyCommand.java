@@ -64,7 +64,7 @@ public class FlyCommand implements CommandExecutor, Listener {
                     if (commandSender instanceof Player) {
                         StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", commandSender.getName()), player);
                     } else {
-                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", "&4&lConsole"), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-disabled").replaceAll("%staff%", "Console"), player);
                     }
 
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.disabled"), (player)));
@@ -76,7 +76,7 @@ public class FlyCommand implements CommandExecutor, Listener {
                 if (commandSender instanceof Player) {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.alert-enabled").replaceAll("%staff%", "Console"), player);
                 }
 
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.fly.enabled"), player));

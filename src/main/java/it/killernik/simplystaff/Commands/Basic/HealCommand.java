@@ -54,7 +54,7 @@ public class HealCommand implements CommandExecutor {
                 if (commandSender instanceof Player) {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.heal.alert").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.heal.alert").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.heal.alert").replaceAll("%staff%", "Console"), player);
                 }
 
                 player.setHealth(player.getMaxHealth());

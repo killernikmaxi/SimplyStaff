@@ -8,6 +8,10 @@ public class MessageUtil {
     // UTIL FOR MESSAGE SENDING
     public static String message(String message, Player player) {
 
+        if (message == null) {
+            return null;
+        }
+
         // TRANSLATE COLOR
         message = ChatColor.translateAlternateColorCodes('&', message);
 

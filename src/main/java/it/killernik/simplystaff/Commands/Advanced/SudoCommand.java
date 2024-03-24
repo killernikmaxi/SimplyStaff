@@ -35,12 +35,12 @@ public class SudoCommand implements CommandExecutor {
 
             } else {
 
-                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.message"), player));
+                commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.message").replaceAll("%command%", commandtoexecute), player));
 
                 if (commandSender instanceof Player) {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", commandSender.getName()).replaceAll("%command%", commandtoexecute), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", "&4&lConsole").replaceAll("%command%", commandtoexecute), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Advanced.sudo.alert").replaceAll("%staff%", "Console").replaceAll("%command%", commandtoexecute), player);
                 }
 
                 player.performCommand(commandtoexecute);

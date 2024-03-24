@@ -1,5 +1,5 @@
 name: SimplyStaff
-version: '${version}'
+version: '1.3'
 main: it.killernik.simplystaff.SimplyStaff
 commands:
   gmc:
@@ -63,3 +63,6 @@ commands:
   sudo:
     description: Sudo Command
     usage: /sudo
+  freeze:
+    description: Freeze Command
+    usage: /freeze

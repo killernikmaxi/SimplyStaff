@@ -38,7 +38,7 @@ public class KillCommand implements CommandExecutor {
                 if (commandSender instanceof Player) {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.kill.alert").replaceAll("%staff%", "Console"), player);
                 }
 
                 player.setHealth(0);

@@ -8,17 +8,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.FoodLevelChangeEvent;
-import java.util.HashSet;
-import java.util.Set;
 
-public class GodmodeCommand implements CommandExecutor, Listener {
-
-    private final Set<Player> godmode = new HashSet<>();
+public class GodmodeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
@@ -32,20 +23,21 @@ public class GodmodeCommand implements CommandExecutor, Listener {
 
             if (commandSender instanceof Player) {
 
-                if (godmode.contains((Player) commandSender)) {
+                if (SimplyStaff.INSTANCE.isInGodmode((Player) commandSender)) {
 
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), ((Player) commandSender)));
 
-                    godmode.remove((Player) commandSender);
+                    SimplyStaff.INSTANCE.removeGodmode((Player) commandSender);
                     return true;
 
                 }
 
-                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-setted").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
+                StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.setted"), ((Player) commandSender)));
 
-                godmode.add((Player) commandSender);
+                SimplyStaff.INSTANCE.addGodmode((Player) commandSender);
+                ((Player) commandSender).setFoodLevel(20);
                 return true;
 
             } else {
@@ -68,16 +60,16 @@ public class GodmodeCommand implements CommandExecutor, Listener {
                 return true;
             } else {
 
-                if (godmode.contains(player)) {
+                if (SimplyStaff.INSTANCE.isInGodmode(player)) {
 
                     if (commandSender instanceof Player) {
                         StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), player);
                     } else {
-                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", "&4&lConsole"), player);
+                        StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", "Console"), player);
                     }
 
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), (player)));
-                    godmode.remove(player);
+                    SimplyStaff.INSTANCE.removeGodmode(player);
                     return true;
 
                 }
@@ -85,11 +77,12 @@ public class GodmodeCommand implements CommandExecutor, Listener {
                 if (commandSender instanceof Player) {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", commandSender.getName()), player);
                 } else {
-                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", "&4&lConsole"), player);
+                    StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", "Console"), player);
                 }
 
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.set"), player));
-                godmode.add(player);
+                SimplyStaff.INSTANCE.addGodmode(player);
+                player.setFoodLevel(20);
 
                 return true;
             }
@@ -97,26 +90,6 @@ public class GodmodeCommand implements CommandExecutor, Listener {
         } else {
             commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("ERROR.incorrect-syntax"), null));
             return true;
-        }
-    }
-
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onEntityDamage(EntityDamageEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (godmode.contains(player))
-                event.setCancelled(true);
-        }
-    }
-
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onFoodLevelChange(FoodLevelChangeEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (godmode.contains(player)) {
-                event.setCancelled(true);
-                player.setFoodLevel(20);
-            }
         }
     }
 }

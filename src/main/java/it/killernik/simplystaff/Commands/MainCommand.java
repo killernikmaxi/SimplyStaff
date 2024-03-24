@@ -34,6 +34,8 @@ public class MainCommand implements CommandExecutor {
             sender.sendMessage(MessageUtil.message("&8» &a/tph [player]", null));
             sender.sendMessage(MessageUtil.message("&8» &a/tppos [x] [y] [z]", null));
             sender.sendMessage(MessageUtil.message("&8» &a/serverinfo", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/sudo [player] [command]", null));
+            sender.sendMessage(MessageUtil.message("&8» &a/freeze [player]", null));
 
         } else {
 
