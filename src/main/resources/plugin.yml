@@ -1,6 +1,9 @@
 name: SimplyStaff
 version: '1.4'
 main: it.killernik.simplystaff.SimplyStaff
+description: A simple and lightweight staff plugin
+authors: killernik
+website: discord.com/invite/qHn2RTyTV7
 commands:
   gmc:
     description: Gamemode creative
