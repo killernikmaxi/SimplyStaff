@@ -66,8 +66,8 @@ COMMANDS:
     fly:
       enabled: "&b&lSimplyStaff &8» &aYou have successfully enabled fly to %player%"
       disabled: "&b&lSimplyStaff &8» &aYou have successfully disabled fly to %player%"
-      alert-enabled: "&b&lSimplyStaff &8» &7%staff% has &aenabled &7fly to &a%player%"
-      alert-disabled: "&b&lSimplyStaff &8» &7%staff% has &cdisabled &7fly to &a%player%"
+      alert-enabled: "&b&lSimplyStaff &8» &7%staff% has &aenabled &7fly for &a%player%"
+      alert-disabled: "&b&lSimplyStaff &8» &7%staff% has &cdisabled &7fly for &a%player%"
 
     heal:
       message: "&b&lSimplyStaff &8» &aYou have successfully healed!"
@@ -87,7 +87,7 @@ COMMANDS:
 
     teleportpos:
       message: "&b&lSimplyStaff &8» &aYou teleported to coordinates: 'x: %x% y: %y% z: %z%'"
-      alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to x: %x% y: %y% z: %z%"
+      alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to coordinates 'x: %x% y: %y% z: %z%'"
 
     freeze:
       freeze-message: "&b&lSimplyStaff &8» &aYou have successfully frozen %player%"
@@ -98,8 +98,8 @@ COMMANDS:
         title: "&4&lYou are frozen!"
         subtitle: "&cplay.yourserver.com"
       unfreeze-player-title:
-        title: "&a&lYou are unfrozen!"
-        subtitle: "&cplay.yourserver.com"
+        title: "&2&lYou are unfrozen!"
+        subtitle: "&aplay.yourserver.com"
       freeze-player-message: "&4&lYou are frozen!"
       unfreeze-player-message: "&a&lYou are unfrozen!"
       block-chat:
@@ -111,8 +111,8 @@ COMMANDS:
 
   Advanced:
     sudo:
-      message: "&b&lSimplyStaff &8» &aYou have successfully forced %player% to execute command &c%command%"
-      alert: "&b&lSimplyStaff &8» &a%staff% has forced %player% to execute &c%command%"
+      message: "&b&lSimplyStaff &8» &aYou have successfully forced %player% to execute command &c/%command%"
+      alert: "&b&lSimplyStaff &8» &a%staff% has forced %player% to execute the command &c%command%"
 
 OTHER:
   config-reloaded: "&b&lSimplyStaff &8» &aConfig reloaded successfully!"
