@@ -54,12 +54,13 @@ public final class SimplyStaff extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        long startTime = System.currentTimeMillis();
         INSTANCE = this;
-
         saveDefaultConfig();
-
+        Bukkit.getLogger().info("- Registering listener...");
         Bukkit.getPluginManager().registerEvents((Listener) new it.killernik.simplystaff.Listener.PlayerListener(), (Plugin) this);
+        Bukkit.getLogger().info("✔ Registered listeners!");
+        Bukkit.getLogger().info("- Registering commands...");
         getCommand("gmc").setExecutor(new GamemodeCreative());
         getCommand("gma").setExecutor(new GamemodeAdventure());
         getCommand("gmsp").setExecutor(new GamemodeSpectator());
@@ -78,8 +79,8 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("serverinfo").setExecutor(new ServerInfoCommand());
         getCommand("sudo").setExecutor(new SudoCommand());
         getCommand("freeze").setExecutor(new FreezeCommand());
-
-        Bukkit.getLogger().info("[SimlyStaff] by killernik enabled");
+        Bukkit.getLogger().info("✔ Registered commands!");
+        Bukkit.getLogger().info("[SimlyStaff] by killernik enabled in " + (System.currentTimeMillis() - startTime) + "ms!");
     }
 
     @Override
