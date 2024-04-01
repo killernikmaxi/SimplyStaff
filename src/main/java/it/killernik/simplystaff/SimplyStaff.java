@@ -11,55 +11,54 @@ import it.killernik.simplystaff.Commands.Gamemodes.GamemodeCreative;
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeSpectator;
 import it.killernik.simplystaff.Commands.Gamemodes.GamemodeSurvival;
 import it.killernik.simplystaff.Commands.MainCommand;
-import it.killernik.simplystaff.Utils.MessageUtil;
+import it.killernik.simplystaff.Listener.world.BlockPlaceEvent;
+import it.killernik.simplystaff.Manager.FreezeManager;
+import it.killernik.simplystaff.Manager.GodModeManager;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public final class SimplyStaff extends JavaPlugin {
 
     public static SimplyStaff INSTANCE;
-    private final Set<Player> godmode = new HashSet<>();
-    private final Set<Player> frozen = new HashSet<>();
+    public GodModeManager godModeManager;
+    public FreezeManager freezeManager;
 
-    public boolean isInGodmode(Player p) {
-        return godmode.contains(p);
-    }
-
-    public void addGodmode(Player p) {
-        godmode.add(p);
-    }
-
-    public void removeGodmode(Player p) {
-        godmode.remove(p);
-    }
-
-    public boolean isFrozen(Player p) {
-        return frozen.contains(p);
-    }
-
-    public void addFreeze(Player p) {
-        frozen.add(p);
-        MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("Commands.freeze.freeze-player-message"), p);
-    }
-
-    public void removeFreeze(Player p) {
-        frozen.remove(p);
-    }
 
     @Override
     public void onEnable() {
         long startTime = System.currentTimeMillis();
         INSTANCE = this;
+        initManagers();
         saveDefaultConfig();
+        registerListeners();
+        registerCommands();
+        Bukkit.getLogger().info("[SimlyStaff] by killernik enabled in " + (System.currentTimeMillis() - startTime) + "ms!");
+    }
+
+    @Override
+    public void onDisable() {
+        Bukkit.getLogger().info("[SimlyStaff] by killernik disabled");
+    }
+
+    private void registerListeners() {
         Bukkit.getLogger().info("- Registering listener...");
-        Bukkit.getPluginManager().registerEvents((Listener) new it.killernik.simplystaff.Listener.PlayerListener(), (Plugin) this);
+
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.onFoodLevelChangeEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.EntityDamageEvent(), this);
+
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.player.AsyncPlayerChatEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.player.PlayerJoinEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.player.PlayerCommandPreprocessEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.player.PlayerJoinEvent(), this);
+
+        Bukkit.getPluginManager().registerEvents(new it.killernik.simplystaff.Listener.world.BlockBreakEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new BlockPlaceEvent(), this);
+
+
         Bukkit.getLogger().info("✔ Registered listeners!");
+    }
+
+    private void registerCommands() {
         Bukkit.getLogger().info("- Registering commands...");
         getCommand("gmc").setExecutor(new GamemodeCreative());
         getCommand("gma").setExecutor(new GamemodeAdventure());
@@ -80,11 +79,11 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("sudo").setExecutor(new SudoCommand());
         getCommand("freeze").setExecutor(new FreezeCommand());
         Bukkit.getLogger().info("✔ Registered commands!");
-        Bukkit.getLogger().info("[SimlyStaff] by killernik enabled in " + (System.currentTimeMillis() - startTime) + "ms!");
     }
 
-    @Override
-    public void onDisable() {
-        Bukkit.getLogger().info("[SimlyStaff] by killernik disabled");
+    public void initManagers() {
+        godModeManager = new GodModeManager();
+        freezeManager = new FreezeManager();
     }
+
 }

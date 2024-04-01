@@ -33,7 +33,7 @@ public class FreezeCommand implements CommandExecutor {
                 return true;
             } else {
 
-                if (!SimplyStaff.INSTANCE.isFrozen(player)) {
+                if (!SimplyStaff.INSTANCE.freezeManager.isFrozen(player)) {
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.freeze-message"), player));
 
                     if (commandSender instanceof Player) {
@@ -42,7 +42,7 @@ public class FreezeCommand implements CommandExecutor {
                         StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.freeze-alert").replaceAll("%staff%", "&4&lConsole"), player);
                     }
 
-                    SimplyStaff.INSTANCE.addFreeze(player);
+                    SimplyStaff.INSTANCE.freezeManager.addFreeze(player);
                     player.sendTitle(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.freeze-player-title.title"), player), MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.freeze-player-title.subtitle"), player));
 
                     return true;
@@ -56,7 +56,7 @@ public class FreezeCommand implements CommandExecutor {
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.unfreeze-alert").replaceAll("%staff%", "Console"), player);
                 }
 
-                SimplyStaff.INSTANCE.removeFreeze(player);
+                SimplyStaff.INSTANCE.freezeManager.removeFreeze(player);
                 player.sendTitle(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.unfreeze-player-title.title"), player), MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.freeze.freeze-player-title.subtitle"), player));
 
                 return true;

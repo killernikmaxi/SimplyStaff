@@ -23,12 +23,12 @@ public class GodmodeCommand implements CommandExecutor {
 
             if (commandSender instanceof Player) {
 
-                if (SimplyStaff.INSTANCE.isInGodmode((Player) commandSender)) {
+                if (SimplyStaff.INSTANCE.godModeManager.isInGodmode((Player) commandSender)) {
 
                     StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), ((Player) commandSender)));
 
-                    SimplyStaff.INSTANCE.removeGodmode((Player) commandSender);
+                    SimplyStaff.INSTANCE.godModeManager.removeGodmode((Player) commandSender);
                     return true;
 
                 }
@@ -36,7 +36,7 @@ public class GodmodeCommand implements CommandExecutor {
                 StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-set").replaceAll("%staff%", commandSender.getName()), (Player) commandSender);
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.setted"), ((Player) commandSender)));
 
-                SimplyStaff.INSTANCE.addGodmode((Player) commandSender);
+                SimplyStaff.INSTANCE.godModeManager.addGodmode((Player) commandSender);
                 ((Player) commandSender).setFoodLevel(20);
                 return true;
 
@@ -60,7 +60,7 @@ public class GodmodeCommand implements CommandExecutor {
                 return true;
             } else {
 
-                if (SimplyStaff.INSTANCE.isInGodmode(player)) {
+                if (SimplyStaff.INSTANCE.godModeManager.isInGodmode(player)) {
 
                     if (commandSender instanceof Player) {
                         StaffAlert.alert(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.alert-removed").replaceAll("%staff%", commandSender.getName()), player);
@@ -69,7 +69,7 @@ public class GodmodeCommand implements CommandExecutor {
                     }
 
                     commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.removed"), (player)));
-                    SimplyStaff.INSTANCE.removeGodmode(player);
+                    SimplyStaff.INSTANCE.godModeManager.removeGodmode(player);
                     return true;
 
                 }
@@ -81,7 +81,7 @@ public class GodmodeCommand implements CommandExecutor {
                 }
 
                 commandSender.sendMessage(MessageUtil.message(SimplyStaff.INSTANCE.getConfig().getString("COMMANDS.Basic.godmode.set"), player));
-                SimplyStaff.INSTANCE.addGodmode(player);
+                SimplyStaff.INSTANCE.godModeManager.addGodmode(player);
                 player.setFoodLevel(20);
 
                 return true;
