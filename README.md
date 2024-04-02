@@ -31,6 +31,7 @@ _A simple and lightweight staff plugin_
 - /tp (player) - Permission: "ss.tp" (Alias: "/teleport")
 - /tph (player) - Permission: "ss.tph" (Alias: "/teleporthere")
 - /tppos (x) (y) (z) - Permission: "ss.tppos" (Alias: "/teleportpos")
+- /tpall (x) ( y ) (z) - Permission: "ss.tpall" (Alias: "/teleportall")
 - /kill (player) - Permission: "ss.kill"
 
 **Advanced:**
