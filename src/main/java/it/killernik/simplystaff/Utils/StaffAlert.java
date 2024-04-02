@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 
 public class StaffAlert {
 
-    // UTIL FOR MESSAGE SENDING
     public static void alert(String message, Player player) {
         if (SimplyStaff.INSTANCE.getConfig().getBoolean("STAFF-ALERTS.enabled")) {
             for (Player online : Bukkit.getOnlinePlayers()) {
