@@ -1,5 +1,5 @@
 name: SimplyStaff
-version: '1.4'
+version: '1.5'
 main: it.killernik.simplystaff.SimplyStaff
 description: A simple and lightweight staff plugin
 author: killernik

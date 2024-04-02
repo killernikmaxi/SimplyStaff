@@ -13,7 +13,7 @@ public class MainCommand implements CommandExecutor {
         if (args.length == 0) {
 
             if (!sender.hasPermission("ss.help")) {
-                sender.sendMessage(MessageUtil.message("&b&lSimplyStaff &8» &cSimplyStaff by killernik", null));
+                sender.sendMessage(MessageUtil.message("&b&lSimplyStaff &8» &cSimplyStaff v1.5 by killernik", null));
                 return true;
             }
 
