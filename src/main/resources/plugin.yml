@@ -58,6 +58,11 @@ commands:
     usage: /teleportpos
     aliases:
       - tppos
+  teleportall:
+    description: Teleportall Command
+    usage: /teleportall
+    aliases:
+      - tpall
   serverinfo:
     description: Serverinfo Command
     usage: /serverinfo

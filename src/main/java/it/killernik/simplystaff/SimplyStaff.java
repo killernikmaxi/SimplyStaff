@@ -3,6 +3,7 @@ package it.killernik.simplystaff;
 import it.killernik.simplystaff.Commands.Advanced.ServerInfoCommand;
 import it.killernik.simplystaff.Commands.Advanced.SudoCommand;
 import it.killernik.simplystaff.Commands.Basic.*;
+import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportAllCommand;
 import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportCommand;
 import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportHereCommand;
 import it.killernik.simplystaff.Commands.Basic.Teleport.TeleportPosCommand;
@@ -75,6 +76,7 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("teleport").setExecutor(new TeleportCommand());
         getCommand("teleportpos").setExecutor(new TeleportPosCommand());
         getCommand("teleporthere").setExecutor(new TeleportHereCommand());
+        getCommand("teleportall").setExecutor(new TeleportAllCommand());
         getCommand("serverinfo").setExecutor(new ServerInfoCommand());
         getCommand("sudo").setExecutor(new SudoCommand());
         getCommand("freeze").setExecutor(new FreezeCommand());

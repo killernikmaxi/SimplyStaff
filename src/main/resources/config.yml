@@ -89,6 +89,10 @@ COMMANDS:
       message: "&b&lSimplyStaff &8» &aYou teleported to coordinates: 'x: %x% y: %y% z: %z%'"
       alert: "&b&lSimplyStaff &8» &a%staff% &7teleported to coordinates 'x: %x% y: %y% z: %z%'"
 
+    teleportall:
+      message: "&b&lSimplyStaff &8» &aYou have teleported all players to you"
+      alert: "&b&lSimplyStaff &8» &a%staff% &7teleported all players to him"
+
     freeze:
       freeze-message: "&b&lSimplyStaff &8» &aYou have successfully frozen %player%"
       freeze-alert: "&b&lSimplyStaff &8» &a%staff% has frozen %player%"
