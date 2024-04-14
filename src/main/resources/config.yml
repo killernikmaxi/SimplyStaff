@@ -52,6 +52,8 @@ COMMANDS:
 
     day: "&b&lSimplyStaff &8» &aTime set to day successfully in the world"
     night: "&b&lSimplyStaff &8» &aTime set to night successfully in the world"
+    invsee: "&b&lSimplyStaff &8» &ayou are now viewing %player%'s inventory"
+    endersee: "&b&lSimplyStaff &8» &ayou are now viewing %player%'s enderchest"
 
     kill:
       message: "&b&lSimplyStaff &8» &aYou have successfully killed %player%"
