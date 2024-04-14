@@ -74,3 +74,15 @@ commands:
   freeze:
     description: Freeze Command
     usage: /freeze
+  endersee:
+    description: Freeze Command
+    usage: /endersee
+  invsee:
+    description: Freeze Command
+    usage: /invsee
+  rename:
+    description: Freeze Command
+    usage: /rename
+  skull:
+    description: Freeze Command
+    usage: /skull

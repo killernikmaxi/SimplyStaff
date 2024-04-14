@@ -80,6 +80,10 @@ public final class SimplyStaff extends JavaPlugin {
         getCommand("serverinfo").setExecutor(new ServerInfoCommand());
         getCommand("sudo").setExecutor(new SudoCommand());
         getCommand("freeze").setExecutor(new FreezeCommand());
+        getCommand("skull").setExecutor(new SkullCommand());
+        getCommand("rename").setExecutor(new RenameCommand());
+        getCommand("invsee").setExecutor(new InvSeeCommand());
+        getCommand("endersee").setExecutor(new EnderSeeCommand());
         Bukkit.getLogger().info("✔ Registered commands!");
     }
 
